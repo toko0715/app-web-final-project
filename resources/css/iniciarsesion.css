@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    /* A futuristic-looking font */
+    background-image: url('../img/wallpapperiniciarsesion.png');
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    background-size: cover;
+    background-position: calc(100% - 0px) calc(100% - 0px);
+    overflow: hidden;
+}
+
+.login-container {
+    font-family: 'Orbitron', sans-serif;
+    /* A futuristic-looking font */
+    width: 500px;
+    padding: 50px;
+    text-align: center;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 300px;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    width: 500px;
+    margin-left: -50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #ffffff7e;
+    border-radius: 40px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-image: url("../img/Card.png");
+    background-size: cover;
+}
+
+.input-field:hover {
+    border-color: #ffffff;
+}
+
+.password-input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #ffffff7e;
+    border-radius: 30px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-image: url("../img/Card.png");
+    background-size: cover;
+    transition: all 0.3s ease;
+}
+
+.password-input:hover {
+    border: 1px solid #ffffff;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 20px;
+    top: 73%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.password-toggle img {
+    width: 24px;
+    /* Adjust this value as needed */
+    height: 24px;
+    /* Adjust this value as needed */
+    display: block;
+    /* Ensures the image behaves like a block element */
+    filter: invert(100%) drop-shadow(0 0 5px rgba(255, 255, 255, 0.812));
+    /* Adds a subtle glow effect */
+}
+
+.login-btn {
+    font-family: 'Orbitron', sans-serif;
+    /* A futuristic-looking font */
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 0px solid #ffffff;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url("../img/Rectangle 1.png");
+    background-size: cover;
+    margin-top: 30px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+    background-image: url("../img/Rectangle 1.png");
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.812),
+        /* Sombra pequeña y difuminada */
+        0 0 10px rgba(255, 255, 255, 0.5),
+        /* Sombra un poco más grande */
+        0 0 15px rgba(255, 255, 255, 0.3);
+    /* Sombra aún más grande para un brillo más extendido */
+    background-size: cover;
+    font-size: 20px;
+}
+
+.login-btn:active {
+    transform: translateY(1px);
+}
+
+.create-account {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.create-account-text {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.create-btn {
+    font-family: 'Orbitron', sans-serif;
+    /* A futuristic-looking font */
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 0px solid #fafafa;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url("../img/Rectangle 1.png");
+    background-size: cover;
+}
+
+.create-btn:hover {
+    background-color: #1a1a1a;
+    border-color: #555;
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.812),
+        /* Sombra pequeña y difuminada */
+        0 0 10px rgba(255, 255, 255, 0.5),
+        /* Sombra un poco más grande */
+        0 0 15px rgba(255, 255, 255, 0.3);
+    /* Sombra aún más grande para un brillo más extendido */
+    font-size: 20px;
+}
+
+.create-btn:active {
+    transform: translateY(1px);
+}
+
+/* Efectos decorativos sutiles */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0.1;
+}

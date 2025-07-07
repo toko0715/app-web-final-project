@@ -1,0 +1,980 @@
+/* Estilos específicos para la página de Detalle de Producto */
+
+/* Asegúrate de que el 'style.css' principal (navbar, body, footer)
+   esté vinculado primero en tu HTML, seguido de este archivo
+   para que los estilos generales se apliquen y estos los complementen. */
+
+body {
+    background-color: #1a1a1a;
+    background-image: url('../img/DETALLE\ PRODUCTO.png'); /* Fondo específico para esta página */
+    background-size: cover;
+    background-attachment: scroll; /* Se desplaza con el scroll */
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px; /* Espacio para el navbar fijo */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* --- Estilos del Navbar (No se tocaron) --- */
+/* --- Estilos del Navbar (No se tocaron) --- */
+.main-header {
+    position: fixed; /* Mantiene el navbar en la parte superior al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que esté por encima de todo lo demás, incluido el contenido */
+    padding: 20px 0; /* Padding superior e inferior para el espaciado */
+}
+
+.navbar {
+    display: flex; /* Permite que los elementos se alineen en fila */
+    justify-content: space-between; /* Distribuye espacio entre bloques (izquierda, logo, derecha) */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 90%; /* Ancho del navbar, ajusta según necesites */
+    max-width: 1450px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el navbar horizontalmente */
+    padding: 15px 30px; /* Relleno interno del navbar */
+    background-color: rgba(0, 0, 0, 0.15); /* Relleno sólido del 15% de opacidad */
+    border-radius: 40px; /* Radio de esquina de 40px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+
+    /* EFECTO DE DESENFOQUE */
+    backdrop-filter: blur(8px); /* Ajusta el valor de blur (píxeles) para el nivel de desenfoque */
+    -webkit-backdrop-filter: blur(8px); /* Prefijo para compatibilidad con Safari */
+}
+
+.navbar-left, .navbar-right {
+    display: flex; /* Permite que los elementos se alineen en fila */
+    align-items: center; /* ¡ESENCIAL para que todos los elementos se centren verticalmente en la fila! */
+    gap: 45px; /* Espacio entre los botones/iconos */
+}
+
+.navbar-logo img {
+    height: 50px; /* Altura de tu logo, ajusta si es necesario */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.nav-button {
+    color: white; /* Color del texto de los botones */
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    font-size: 1.1em;
+    padding: 8px 15px; /* Padding para hacer los botones clicables */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transición suave al pasar el ratón */
+}
+
+.nav-button:hover {
+    color: #ffcc00; /* Color amarillo/naranja al pasar el ratón (ajusta a tu gusto) */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* --- Estilos para iconos de imagen personalizados (No se tocaron) --- */
+.nav-icon {
+    /* Establece un tamaño de caja uniforme para TODOS los iconos de imagen */
+    height: 28px; /* Altura común deseada, ajustada para que quepa bien con el texto "ESP" */
+    width: 28px;  /* Ancho común deseado, para mantener una caja cuadrada */
+    object-fit: contain; /* Asegura que la imagen se vea completa dentro de la caja, manteniendo su aspecto */
+    transition: transform 0.2s ease;
+}
+
+.nav-icon:hover .custom-icon {
+    transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+
+/* --- AJUSTES DE POSICIONAMIENTO FINO POR ICONO (No se tocaron) --- */
+.whatsapp-icon {
+    height: 28px;
+    width: 28px;
+    transition: transform 0.3s ease; 
+    transform: translateY(5px);
+}
+
+.Instagram-icon {
+    height: 25px;
+    width: 25px;
+    transition: transform 0.3s ease;
+    transform: translateY(6px);
+}
+
+.X-icon {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform: translateY(6px);
+}
+
+/* NUEVO: Estilos para el icono del carrito */
+.cart-icon-img {
+    height: 33px; /* Ajusta este valor si tu imagen de carrito es más grande o pequeña */
+    width: 33px;  /* Ajusta este valor si tu imagen de carrito es más grande o pequeña */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform: translateY(-0.7px);
+}
+
+.profile-icon-img {
+    height: 28px; /* Consistente con otros iconos */
+    width: 28px; /* Consistente con otros iconos */
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.profile-button:hover .profile-icon-img {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+    transform: scale(1.1);
+}
+
+/* --- Estilos para el Dropdown de Idioma (No se tocaron) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    color: white;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropbtn:hover {
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.158);
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Oculta secciones no deseadas si este CSS se carga en otra página */
+.carousel-background,
+.product-presentation-container,
+.catalog-main-content,
+.brands-section {
+    display: none !important;
+}
+
+/* Contenedor principal de la página de detalle */
+.product-detail-main-content {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+    padding: 40px 20px;
+    max-width: 1300px; /* Ancho máximo similar a tu catálogo */
+    margin: 20px auto;
+    background-color: rgba(37, 37, 37, 0.18); /* Fondo semitransparente general, como tu catálogo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+/* Sección superior de imagen y detalles del producto */
+.product-hero-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 40px;
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    margin-bottom: 10px;
+}
+
+.product-image-container {
+    flex: 1;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-container img {
+    max-width: 115%;
+    height: auto;
+    display: block;
+    border-radius: 15px; /* Bordes redondeados para la imagen */
+    margin-left: 215%;
+}
+
+.product-info {
+    flex: 2; /* Ocupa el doble de espacio que la imagen */
+    min-width: 300px; /* Ancho mínimo para la información */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos internos */
+}
+
+.product-title {
+    font-size: 2.5em;
+    color: #ffffff; /* Color blanco para el título */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    margin-top: 495px;
+    margin-left: -420px;
+}
+
+.product-description-full {
+    font-size: 1.1em;
+    color: #e6e6e6db; /* Color gris claro para la descripción */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    margin-left: -420px;
+    max-width: 1100px;
+}
+
+.product-rating {
+    color: #ffffff;
+    margin-left: -420px;
+}
+
+.product-price-large {
+    font-size: 3.3em; /* Tamaño grande para el precio */
+    color: #ffffff; /* Color blanco para el precio */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-left: -420px;
+    line-height: 1.2px;
+}
+
+.product-price-large del {
+    color: #ff3434;
+    font-size: 0.6em;
+    margin-right: 10px;
+}
+
+.product-price-large span {
+    color: #ffffff; /* Tu color original para el precio de oferta */
+}
+
+.quantity-add-to-cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px; /* Margen superior para separarlo de la descripción */
+}
+
+.quantity-controls {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-left: -420px;
+    margin-top: 27px;
+}
+
+.quantity-button,
+.quantity-input {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4em;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+    -moz-appearance: textfield; /* Para Firefox */
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Oculta las flechas del input number */
+    margin: 0;
+}
+/* Estilos para el botón de Favoritos */
+.favorite-button {
+    background-color: #ffffff; /* Fondo transparente */
+    border: 2px solid rgb(255, 255, 255); /* Borde blanco semi-transparente */
+    color: #000000; /* Color del icono blanco */
+    padding: 15px; /* Ajusta el padding para que sea un círculo o cuadrado */
+    border-radius: 50%; /* Hace que el botón sea circular */
+    font-size: 1.3em; /* Tamaño del icono */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex; /* Para centrar el icono si es necesario */
+    justify-content: center;
+    align-items: center;
+    width: 55px; /* Ancho fijo para el círculo */
+    height: 55px; /* Altura fija para el círculo */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.621); /* Sombra sutil */
+    margin-left: 560px;
+    margin-top: 3px;
+}
+
+.favorite-button:hover {
+    background-color: rgb(255, 255, 255); /* Fondo ligeramente visible al pasar el ratón */
+    border-color: rgba(255, 255, 255, 0.7); /* Borde más visible */
+    transform: scale(1.05); /* Pequeña escala para el efecto hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra más pronunciada */
+}
+
+.add-to-cart-button {
+    background-color: #ffffff; /* Tu color original para el botón */
+    color: #000000; /* Tu color original para el texto del botón */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Tu sombra original */
+    margin-left: 10px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #f0f0f0; /* Un blanco ligeramente diferente en hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Tu sombra original en hover */
+}
+
+/* Sección "También te puede interesar" */
+.you-might-like-section {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.you-might-like-section h2 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.you-might-like-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.recommended-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adaptable a 4 columnas */
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch; /* Esencial para que las tarjetas tengan la misma altura */
+}
+
+/* Estilos de la tarjeta de producto individual (similar a las del catálogo) */
+.recommended-product-card {
+    background-color: rgba(0, 0, 0, 0.542); /* Fondo transparente */
+    border-radius: 40px;
+    padding: 25px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* text-align: center;  <-- REMOVE OR COMMENT OUT THIS LINE */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keep this if you want the image to be centered horizontally */
+    position: relative;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    height: 100%;
+    flex-grow: 1;
+    justify-content: flex-start;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-status {
+    color: #ededed;
+    font-size: 1.2em;
+    line-height: 2.7;
+    font-weight: normal;
+    margin-bottom: 15px;
+    /* Add this for left alignment */
+    align-self: flex-start; /* Aligns this item to the start (left) within the flex container */
+    width: 100%; /* Ensure it takes full width to align its text */
+    text-align: left; /* Explicitly align its text to the left */
+}
+
+.recommended-product-name-small {
+    color: #ededed;
+    font-size: 1em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    font-weight: normal;
+    /* Add these for left alignment */
+    align-self: flex-start; /* Aligns this item to the start (left) within the flex container */
+    width: 100%; /* Ensure it takes full width to align its text */
+    text-align: left; /* Explicitly align its text to the left */
+    margin-top: -10px;
+}
+
+.product-rating-recommended {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    /* Add these for left alignment of the stars */
+    align-self: flex-start; /* Aligns this item to the start (left) within the flex container */
+    width: 100%; /* Ensure it takes full width to align its content */
+    text-align: left; /* Explicitly align its content (stars) to the left */
+    margin-top: 10px;
+}
+a {
+    color: rgba(0, 0, 0, 0);
+}
+
+.recommended-product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.recommended-product-price-small {
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 10px;
+    /* Add these for left alignment */
+    align-self: flex-start; /* Aligns this item to the start (left) within the flex container */
+    width: 100%; /* Ensure it takes full width to align its text */
+    text-align: left; /* Explicitly align its text to the left */
+}
+
+.recommended-product-price-small del {
+    color: #888;
+    font-size: 0.7em;
+    margin-right: 5px;
+}
+
+.recommended-product-price-small span {
+    color: #ffffff;
+}
+
+/* Sección de características destacadas (debajo de "Te puede interesar") */
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 80px;
+    padding: 40px 20px;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: -10px;
+    margin-left: -18px;
+}
+
+
+.feature-item i {
+    font-size: 2.5em;
+    color: #ffffff; /* Tu color de íconos */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.feature-item h3 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-size: .9em;
+    color: #e0e0e0;
+    margin-top: -10px;
+}
+
+/* --- Media Queries para responsividad --- */
+@media (max-width: 992px) {
+    .product-hero-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-image-container, .product-info {
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+    .product-title {
+        font-size: 2.2em;
+        text-align: center;
+    }
+    .product-description-full {
+        font-size: 1em;
+        text-align: center;
+    }
+    .product-price-large {
+        font-size: 3em;
+        text-align: center;
+    }
+    .quantity-add-to-cart {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    .quantity-controls, .add-to-cart-button {
+        width: 100%;
+        max-width: 300px; /* Limita el ancho del botón en móviles */
+    }
+    .recommended-products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .feature-item {
+        min-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-detail-main-content {
+        padding: 20px 10px;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    .product-hero-section {
+        gap: 20px;
+    }
+    .product-title {
+        font-size: 1.8em;
+    }
+    .product-price-large {
+        font-size: 2.5em;
+    }
+    .add-to-cart-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .recommended-products-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+    .recommended-product-card {
+        padding: 20px;
+    }
+    .recommended-product-image-small {
+        max-height: 100px;
+    }
+    .features-section {
+        padding: 20px;
+        gap: 20px;
+    }
+    .feature-item h3 {
+        font-size: 1.1em;
+    }
+    .feature-item p {
+        font-size: 0.8em;
+    }
+}
+
+/* Reafirmación de estilos de Footer (no se modificó de tu último envío) */
+.main-footer {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 20px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.993);
+    margin-top: auto;
+    transform: translate(0, 55px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 85%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column {
+    flex: 6;
+    min-width: 100px;
+    margin: 30px;
+    text-align: left;
+    width: 1500px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+}
+
+.newsletter-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaaaaa;
+}
+
+.newsletter-form button {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffffff;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-bottom .contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-bottom .contact-info i {
+    color: #ffffff;
+}
+
+.main-footer {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 20px;
+    color: white;
+    text-align: center;
+    /* APLICAMOS EL EFECTO DE DESENFOQUE AQUÍ */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para ver el desenfoque */
+    backdrop-filter: blur(8px); /* Aplica el desenfoque */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidad */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.993); /* Sombra para simular elevación */
+    margin-top: auto; /* Empuja el footer hacia abajo, al final del espacio disponible */
+    /* Como es un elemento de bloque y no tiene un 'width' definido, por defecto ocupa el 100% del ancho de su padre (el body) */
+    transform: translate(0, 55px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 85%; /* <-- Puedes ajustar este valor si quieres que el contenido ocupe más ancho */
+    max-width: 1600px; /* <-- O aumentar el máximo si prefieres que se extienda más en pantallas grandes */
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ajusta la posición del contenido del footer */
+}
+
+.footer-column {
+    flex: 6;
+    min-width: 100px;
+    margin: 30px;
+    text-align: left;
+    width: 1500px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+}
+
+/* Newsletter form */
+.newsletter-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaaaaa;
+}
+
+.newsletter-form button {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffffff;
+}
+
+/* Social icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-bottom .contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-bottom .contact-info i {
+    color: #ffffff;
+}
+
+/* --- Media Queries para responsividad (se pueden ajustar) --- */
+@media (max-width: 768px) {
+    .navbar {
+        width: 98%;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo {
+        width: 100%;
+        text-align: center;
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .features-section {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .feature-item {
+        margin-bottom: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}

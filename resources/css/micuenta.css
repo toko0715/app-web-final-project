@@ -1,0 +1,1219 @@
+/* micuenta.css - Estilo sobrio, sencillo, blanco y brillante */
+
+/* El body de micuenta.html tendrá su propio fondo si se desea, o hereda del global */
+body {
+    margin: 0;
+    font-family: 'Verdana', sans-serif;
+    /* Fuente web-safe, sencilla y moderna */
+    background-color: #0d0d0d;
+    /* Fondo muy oscuro, casi negro, para toda la página */
+    background-attachment: scroll;
+    /* Se desplaza con el scroll */
+    color: #f0f0f0;
+    /* Color de texto general muy claro, casi blanco */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Si quieres una imagen de fondo específica para la página de la cuenta */
+    background-image: url('../img/Wallpappermicuenta.png');
+    /* Asegura que esta imagen exista y sea oscura */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Opcional: para un efecto de paralaje en el fondo */
+}
+/* --- Estilos del Navbar --- */
+.main-header {
+    position: fixed; /* Mantiene el navbar en la parte superior al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que esté por encima de todo lo demás, incluido el contenido */
+    padding: 20px 0; /* Padding superior e inferior para el espaciado */
+}
+
+.navbar {
+    display: flex; /* Permite que los elementos se alineen en fila */
+    justify-content: space-between; /* Distribuye espacio entre bloques (izquierda, logo, derecha) */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 90%; /* Ancho del navbar, ajusta según necesites */
+    max-width: 1450px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el navbar horizontalmente */
+    padding: 15px 30px; /* Relleno interno del navbar */
+    background-color: rgba(0, 0, 0, 0.15); /* Relleno sólido del 15% de opacidad */
+    border-radius: 40px; /* Radio de esquina de 40px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+
+    /* EFECTO DE DESENFOQUE */
+    backdrop-filter: blur(8px); /* Ajusta el valor de blur (píxeles) para el nivel de desenfoque */
+    -webkit-backdrop-filter: blur(8px); /* Prefijo para compatibilidad con Safari */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex; /* Permite que los elementos se alineen en fila */
+    align-items: center; /* ¡ESENCIAL para que todos los elementos se centren verticalmente en la fila! */
+    gap: 45px; /* Espacio entre los botones/iconos */
+}
+
+.navbar-logo img {
+    height: 50px; /* Altura de tu logo, ajusta si es necesario */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.nav-button {
+    color: white; /* Color del texto de los botones */
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    font-size: 1.1em;
+    padding: 8px 15px; /* Padding para hacer los botones clicables */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transición suave al pasar el ratón */
+}
+
+.nav-button:hover {
+    color: #ffcc00; /* Color amarillo/naranja al pasar el ratón (ajusta a tu gusto) */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* --- Estilos para iconos de imagen personalizados (No se tocaron) --- */
+.nav-icon {
+    /* Establece un tamaño de caja uniforme para TODOS los iconos de imagen */
+    height: 28px; /* Altura común deseada, ajustada para que quepa bien con el texto "ESP" */
+    width: 28px;  /* Ancho común deseado, para mantener una caja cuadrada */
+    object-fit: contain; /* Asegura que la imagen se vea completa dentro de la caja, manteniendo su aspecto */
+    transition: transform 0.2s ease;
+}
+
+.nav-icon:hover .custom-icon {
+    transform: scale(1.1); /* Efecto al pasar el ratón */
+}
+
+/* --- AJUSTES DE POSICIONAMIENTO FINO POR ICONO (No se tocaron) --- */
+.whatsapp-icon {
+    height: 28px;
+    width: 28px;
+    transition: transform 0.3s ease; 
+    transform: translateY(5px);
+}
+
+.Instagram-icon {
+    height: 25px;
+    width: 25px;
+    transition: transform 0.3s ease;
+    transform: translateY(6px);
+}
+
+.X-icon {
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform: translateY(5px);
+}
+
+/* NUEVO: Estilos para el icono del carrito */
+.cart-icon-img {
+    height: 33px; /* Ajusta este valor si tu imagen de carrito es más grande o pequeña */
+    width: 33px;  /* Ajusta este valor si tu imagen de carrito es más grande o pequeña */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform: translateY(-0.7px);
+}
+
+.profile-icon-img {
+    height: 28px; /* Consistente con otros iconos */
+    width: 28px; /* Consistente con otros iconos */
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.profile-button:hover .profile-icon-img {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+    transform: scale(1.1);
+}
+
+/* --- Estilos para el Dropdown de Idioma (No se tocaron) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    color: white;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropbtn:hover {
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.158);
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Contenedor principal de la página "Mi Cuenta" */
+.account-page-container {
+    display: flex;
+    max-width: 1300px;
+    /* Ajuste clave: Empujar la carta hacia abajo para que no choque con el header fijo */
+    margin: 120px auto 50px auto;
+    /* 120px de margen superior, centrado, 50px de margen inferior */
+
+    /* Fondo muy transparente para que se vea el wallpaper */
+    background-color: rgba(0, 0, 0, 0);
+    /* Muy ligero para mantener el desenfoque visible */
+
+    border-radius: 30px;
+    /* Bordes más redondeados */
+    overflow: hidden;
+    /* Sombra exterior para la carta principal (blanco brillante) */
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.2),
+        /* Brillo blanco suave */
+        0 0 60px rgba(255, 255, 255, 0.1),
+        /* Brillo blanco más difuso */
+        0 0 0 1px rgb(255, 255, 255);
+    /* Borde blanco sutil para la carta principal */
+
+    min-height: 650px;
+    position: relative;
+    flex-grow: 1;
+
+    /* Aplicar un filtro de desenfoque a la carta si el fondo del body es una imagen */
+    backdrop-filter: blur(10px);
+    /* Desenfoque para el fondo translúcido */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Sidebar de navegación (menú lateral) */
+.account-sidebar {
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Ligeramente más opaco que el contenedor para diferenciar */
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    color: #e0e0e0;
+    /* Texto gris claro */
+    flex-shrink: 0;
+    border-radius: 20px 0 0 20px;
+    box-sizing: border-box;
+    /* Sombra interior y borde blanco sutil para el sidebar */
+    box-shadow: inset -2px 0 10px rgba(255, 255, 255, 0),
+        /* Sombra blanca sutil hacia la derecha */
+        1px 0 0 rgba(255, 255, 255, 0.345);
+    /* Borde blanco muy sutil en el lado derecho del sidebar */
+}
+
+.sidebar-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    /* Título en blanco puro */
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 12px;
+}
+
+/* Estilos para todos los enlaces del sidebar (excepto historial y cerrar sesión) */
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    /* Alinea los ítems verticalmente al centro */
+    padding: 14px 20px;
+    /* Padding por defecto */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 35px;
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08), 0 0 5px rgba(0, 0, 0, 0.5);
+    white-space: normal;
+    /* Permite que el texto se envuelva */
+    line-height: 1.3;
+    height: auto;
+    min-height: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    /* Alineación del texto a la izquierda por defecto */
+    justify-content: flex-start;
+    /* Alinea los elementos (icono y texto) al inicio (izquierda) */
+    flex-direction: row;
+    /* Ícono y texto en la misma fila por defecto */
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 10px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.sidebar-nav .nav-item.active .nav-link {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0), 0 0 40px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(255, 255, 255);
+    transform: none;
+    height: auto;
+    min-height: 50px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    /* Para el estado activo, centramos el contenido si es un botón de tipo "columna", de lo contrario, sigue a la izquierda */
+    justify-content: flex-start;
+}
+
+.sidebar-nav .nav-link i {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+    padding-top: 0;
+}
+
+/* Ajuste específico para el botón de Historial y detalles de mis pedidos */
+.sidebar-nav .nav-item.history .nav-link {
+    flex-direction: column;
+    /* Apila el icono y el texto */
+    align-items: center;
+    /* CENTRA los elementos (icono y texto) horizontalmente */
+    text-align: center;
+    /* CENTRA el texto dentro de su contenedor */
+    justify-content: center;
+    /* Centra el grupo icono-texto verticalmente si hay espacio */
+    padding: 12px 18px;
+    /* Ajuste: Ligeramente más padding para "despegarlo" */
+    line-height: 1.2;
+    /* Reduce la altura de línea para texto envuelto */
+}
+
+.sidebar-nav .nav-item.history .nav-link i {
+    margin-right: 0;
+    /* Quita el margen derecho cuando se apila */
+    margin-bottom: 5px;
+    /* Añade un pequeño margen inferior al icono */
+}
+
+/* Aseguramos que el botón de historial activo también tenga los mismos ajustes de apilamiento y alineación */
+.sidebar-nav .nav-item.history.active .nav-link {
+    flex-direction: column;
+    align-items: center;
+    /* CENTRA los elementos (icono y texto) horizontalmente */
+    text-align: center;
+    /* CENTRA el texto dentro de su contenedor */
+    justify-content: center;
+    padding: 12px 18px;
+    /* Ajuste: Ligeramente más padding para "despegarlo" */
+    line-height: 1.2;
+}
+
+.sidebar-nav .nav-item.history.active .nav-link i {
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+
+
+.sidebar-nav .nav-item.logout {
+    margin-top: 50px;
+}
+
+.sidebar-nav .nav-item.logout .nav-link {
+    background-color: #e74c3c;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    /* Centrado para el botón de cerrar sesión */
+    justify-content: center;
+    /* Centrado para el botón de cerrar sesión */
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.6);
+    height: 50px;
+    transform: none;
+    flex-direction: row;
+    /* Ícono y texto en la misma fila para el botón de logout */
+    padding: 14px 20px;
+}
+
+.sidebar-nav .nav-item.logout .nav-link:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 25px rgba(231, 76, 60, 0.8);
+    transform: translateY(-3px);
+}
+
+/* Contenido principal de la sección activa */
+.account-main-content {
+    flex-grow: 1;
+    padding: 40px 50px;
+    background-color: rgba(0, 0, 0, 0.071);
+    position: relative;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.content-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 18px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.content-title i {
+    margin-right: 18px;
+    font-size: 32px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Base style for content sections */
+.content-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    flex-grow: 1;
+    padding: 0;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Wrapper for main content and the profile image within a section */
+.form-and-image-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+    min-height: 400px;
+}
+
+/* Main content area within the form-and-image-wrapper */
+.section-main-area {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el contenido horizontalmente dentro de esta área */
+    justify-content: center;
+    /* Centra el contenido verticalmente dentro de esta área */
+}
+
+/* Profile Form (Applies to all forms, including Address) */
+.profile-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 650px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    text-align: left;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="password"],
+.profile-form input[type="tel"],
+.profile-form textarea {
+    width: calc(100% - 28px);
+    padding: 14px 14px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid transparent;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.3),
+        0 0 8px rgba(255, 255, 255, 0.15),
+        inset 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.profile-form textarea {
+    border-radius: 15px;
+    min-height: 80px;
+    resize: vertical;
+}
+
+.profile-form input::placeholder,
+.profile-form textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+    border-color: transparent;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        inset 0 0 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+.form-footer {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.privacy-checkbox {
+    display: flex;
+    align-items: center;
+    color: #c0c0c0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.privacy-checkbox input[type="checkbox"] {
+    margin-right: 12px;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(40, 40, 40, 0.7);
+    border: 1px solid transparent;
+    border-radius: 7px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.privacy-checkbox input[type="checkbox"]:checked {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+.privacy-checkbox input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: #0d0d0d;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+/* ESTILOS DEL BOTÓN GUARDAR (FONDO BLANCO, TEXTO OSCURO, SOMBRAS) */
+.save-button,
+.action-button {
+    background-color: #ffffff;
+    color: #0d0d0d;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.5),
+        0 5px 20px rgba(255, 255, 255, 0.4);
+    filter: brightness(1.0);
+    justify-content: center;
+    align-items: center;
+}
+
+.save-button:hover,
+.action-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.9),
+        0 8px 30px rgba(255, 255, 255, 0.7);
+    filter: brightness(1.1);
+}
+
+/* Special styling for "Add to Cart" button in favorites */
+.add-to-cart-button {
+    background-color: #28a745;
+    color: #ffffff;
+    box-shadow:
+        0 0 0 2px rgba(40, 167, 69, 0.5),
+        0 5px 20px rgba(40, 167, 69, 0.4);
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+    box-shadow:
+        0 0 0 3px rgba(40, 167, 69, 0.9),
+        0 8px 30px rgba(40, 167, 69, 0.7);
+}
+
+
+/* Profile Image Container */
+.profile-image-container {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.8),
+        0 0 60px rgba(255, 255, 255, 0.332);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.profile-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Specific Section Styles --- */
+
+/* Mis Favoritos Section - Buttons container */
+.favorite-buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0px;
+    width: 100%;
+}
+
+.favorite-buttons-container .action-button {
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: auto;
+    max-width: 220px;
+    font-size: 15px;
+    padding: 12px 25px;
+}
+
+
+/* Historial Section */
+.order-history {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 650px;
+    align-self: center;
+    text-align: left;
+}
+
+.order-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.order-card h3 {
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    font-size: 1.4em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.order-details p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+.order-details p strong {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+/* Hidden content class for JS toggling */
+.hidden-content {
+    display: none;
+}
+
+/* Alineación de los mensajes "sin contenido" */
+.info-message {
+    text-align: left;
+    /* Mantiene el texto alineado a la izquierda DENTRO del bloque */
+    padding: 60px 20px 60px 40px;
+    /* **AJUSTE: Aumenta el padding izquierdo a 40px para mover el texto a la derecha.** */
+    font-style: italic;
+    color: #aaa;
+    width: 100%;
+    /* El ancho completo para calcular el margen auto */
+    max-width: 480px;
+    /* Un poco más estrecho para que el bloque completo se centre mejor y no se vea tan "estirado" horizontalmente. */
+    margin: 0 auto;
+    /* Mantiene el bloque CENTRADO horizontalmente en el espacio disponible. */
+    box-sizing: border-box;
+}
+
+
+/* Utilitarios */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 992px) {
+    .account-page-container {
+        flex-direction: column;
+        margin: 100px 20px 50px 20px;
+        max-width: 95%;
+        min-height: auto;
+        border-radius: 18px;
+        box-shadow:
+            0 0 25px rgba(255, 255, 255, 0.15),
+            0 0 50px rgba(255, 255, 255, 0.08),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .account-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 25px;
+        align-items: center;
+        border-radius: 18px 18px 0 0;
+        box-shadow: inset 0 -3px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-nav {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .sidebar-nav .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .sidebar-nav .nav-item {
+        margin-bottom: 0;
+    }
+
+    /* Enlace de navegación general para móvil */
+    .sidebar-nav .nav-link {
+        white-space: normal;
+        text-align: center;
+        /* En móvil, centramos por defecto para estos botones */
+        justify-content: center;
+        /* Centramos el contenido */
+        flex-direction: column;
+        /* Apilamos icono y texto para espacio */
+        height: auto;
+        min-height: 50px;
+        padding: 12px 15px;
+    }
+
+    .sidebar-nav .nav-link i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    /* Botón de Historial en móvil: también centrado */
+    .sidebar-nav .nav-item.history .nav-link {
+        align-items: center;
+        /* Centra los elementos (icono y texto) horizontalmente */
+        text-align: center;
+        /* Centra el texto dentro de su contenedor */
+        justify-content: center;
+        /* Centra el grupo icono-texto verticalmente si hay espacio */
+        padding: 12px 15px;
+        /* Mantiene padding consistente en móvil */
+    }
+
+    .sidebar-nav .nav-item.active .nav-link {
+        align-items: center;
+        /* Re-center alignment for active item on mobile if content is simple */
+        height: auto;
+        min-height: 50px;
+    }
+
+
+    .account-main-content {
+        padding: 35px;
+    }
+
+    .form-and-image-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        padding-right: 0;
+        min-height: auto;
+    }
+
+    .section-main-area {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 0;
+        box-shadow: none;
+        /* Para móvil, el section-main-area sigue centrando sus hijos principales */
+        text-align: center;
+        align-items: center;
+    }
+
+    .profile-form {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 20px;
+        align-self: center;
+        text-align: left;
+        padding: 0 15px;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .save-button,
+    .action-button,
+    .add-to-cart-button {
+        width: 100%;
+        max-width: 350px;
+        padding: 14px 30px;
+        font-size: 17px;
+        box-shadow:
+            0 0 0 2px rgba(255, 255, 255, 0.3),
+            0 5px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .profile-image-container {
+        width: 200px;
+        height: 200px;
+        margin-top: 0;
+        border-width: 3px;
+        box-shadow:
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 40px rgba(255, 255, 255, 0.4);
+    }
+
+    .favorite-buttons-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .favorite-buttons-container .action-button {
+        max-width: 350px;
+        font-size: 17px;
+        padding: 14px 30px;
+    }
+
+    .info-message {
+        text-align: left;
+        /* Alineación a la izquierda en móvil */
+        padding: 30px 15px 30px 25px;
+        /* Ajuste para móvil: más padding izquierdo */
+        margin: 0 auto;
+        max-width: 90%;
+        /* Ajuste para móvil, si es necesario */
+    }
+}
+
+@media (max-width: 576px) {
+    .account-page-container {
+        margin: 80px 10px 30px 10px;
+        border-radius: 12px;
+    }
+
+    .account-sidebar {
+        padding: 25px 15px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .sidebar-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .sidebar-nav .nav-link {
+        font-size: 16px;
+        padding: 12px 15px;
+        border-radius: 10px;
+    }
+
+    .sidebar-nav .nav-link i {
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .account-main-content {
+        padding: 25px;
+    }
+
+    .content-title {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .content-title i {
+        font-size: 28px;
+    }
+
+    .profile-form input,
+    .profile-form textarea {
+        font-size: 15px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .privacy-checkbox {
+        font-size: 15px;
+    }
+
+    .privacy-checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+    }
+
+    .privacy-checkbox input[type="checkbox"]:checked::after {
+        font-size: 16px;
+    }
+
+    .save-button,
+    .action-button,
+    .add-to-cart-button {
+        font-size: 16px;
+        padding: 12px 25px;
+        border-radius: 10px;
+    }
+
+    .profile-image-container {
+        width: 160px;
+        height: 160px;
+        border-width: 3px;
+    }
+
+    .order-card {
+        padding: 15px;
+    }
+}
+
+.main-footer {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 20px;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.301);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.596);
+    margin-top: auto;
+    transform: translate(0, 55px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column {
+    flex: 6;
+    min-width: 100px;
+    margin: 30px;
+    text-align: left;
+    width: 1100px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+}
+
+/* Newsletter form */
+.newsletter-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaaaaa;
+}
+
+.newsletter-form button {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffffff;
+}
+
+/* Social icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-bottom .contact-info i {
+    color: #ffffff;
+}
+
+/* --- Media Queries para responsividad (se pueden ajustar) --- */
+@media (max-width: 768px) {
+    .navbar {
+        width: 98%;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo {
+        width: 100%;
+        text-align: center;
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .features-section {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .feature-item {
+        margin-bottom: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('../img/wallpapperiniciarsesion.png');
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: normal; /* Adjusted to allow individual element line-height control */
+    background-size: cover;
+    background-position: calc(100% - 0px) calc(100% - 0px); /* Original background position */
+    overflow: hidden;
+}
+
+.login-container {
+    font-family: 'Orbitron', sans-serif;
+    width: 500px; /* Reverted to original width */
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 33px;
+}
+
+.title {
+    font-size: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    width: 900px; /* Increase this value until the text fits on one line */
+    margin-left: -250px; /* You'd need to adjust this manually to center it */
+    white-space: nowrap; /* Ensures text stays on one line */
+    /* text-align: center; might be needed depending on parent container */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Reverted to original margin */
+    position: relative;
+    text-align: left; /* Keep left alignment for labels/icons */
+}
+
+.label {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: block;
+    /* Change text-align to center */
+    text-align: center;
+    /* Remove margin-left as it would offset the centered text */
+    margin-left: 0;
+}
+
+.input-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 20px 15px 50px; /* Keep padding for icon */
+    border: 1px solid #ffffff7e;
+    border-radius: 40px; /* Keep 40px for consistent roundness */
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-image: url(../img/Card.png);
+    background-size: cover;
+    background-position: center; /* Ensures background image is centered */
+    -webkit-appearance: none;
+}
+
+.input-field:hover {
+    border-color: #ffffff; /* Reverted to original hover effect */
+}
+
+.icon {
+    position: absolute;
+    left: 20px;
+    color: #888;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input {
+    width: 100%;
+    padding: 15px 20px 15px 50px; /* Keep padding for icon */
+    background-color: #1a1a1a;
+    border: 1px solid #ffffff7e;
+    border-radius: 30px; /* Reverted to original 30px for password input */
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-image: url(../img/Card.png);
+    background-size: cover;
+    background-position: center; /* Ensures background image is centered */
+    transition: all 0.3s ease;
+}
+
+.password-input:focus {
+    border-color: #ffffff;
+}
+.password-input:hover {
+    border: 1px solid #ffffff; /* Reverted to original hover effect */
+}
+
+.password-strength {
+    position: absolute;
+    right: 20px;
+    color: #28a745;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.date-input {
+    padding-right: 20px;
+    background-image: url(../img/Card.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Style for date input placeholder/empty state */
+.date-input:focus::-webkit-datetime-edit-year-field,
+.date-input:focus::-webkit-datetime-edit-month-field,
+.date-input:focus::-webkit-datetime-edit-day-field {
+    color: white;
+}
+.date-input::-webkit-datetime-edit-year-field,
+.date-input::-webkit-datetime-edit-month-field,
+.date-input::-webkit-datetime-edit-day-field {
+    color: #888;
+}
+.date-input:not(:focus)::-webkit-datetime-edit-text {
+    color: #888;
+}
+
+
+.register-btn {
+    font-family: 'Orbitron', sans-serif;
+    width: 100%; /* Reverted to original width */
+    padding: 15px; /* Reverted to original padding */
+    background: transparent;
+    border: 0px solid #ffffff; /* Reverted to original border */
+    border-radius: 30px; /* Reverted to original border-radius */
+    color: white;
+    font-size: 16px; /* Reverted to original font size */
+    font-weight: 300; /* Reverted to original font weight */
+    letter-spacing: 2px; /* Reverted to original letter spacing */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url(../img/Rectangle\ 1.png);
+    background-size: cover;
+    margin-top: 30px; /* Reverted to original margin-top */
+}
+
+.register-account {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+.register-btn:hover {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%); /* Reverted to original hover background */
+    background-image: url(../img/Rectangle\ 1.png); /* Keep the background image */
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.812),
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 15px rgba(255, 255, 255, 0.3);
+    background-size: cover;
+    font-size: 20px;
+}
+
+.register-btn:active {
+    transform: translateY(1px);
+}
+
+/* More subtle lines */
+.line1 {
+    position: absolute;
+    left: 5%;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent);
+}
+
+.line2 {
+    position: absolute;
+    left: 15%;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent);
+}
+
+.line3 {
+    position: absolute;
+    right: 5%;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent);
+}
+
+.line4 {
+    position: absolute;
+    right: 15%;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent);
+}
